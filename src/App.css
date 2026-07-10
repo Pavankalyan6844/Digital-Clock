@@ -1,4 +1,4 @@
-
+/* 1. Create a deep dark dashboard environment */
 body {
   margin: 0;
   padding: 0;
@@ -6,47 +6,70 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #121214;       
-  font-family: 'Courier New', Courier, monospace; 
-
+  background-color: #121214;       /* Slate-black minimalist background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.clock-wrapper {
-  perspective: 1000px;            
+/* 2. Outer layout wrapper */
+.container {
+  perspective: 1000px;            /* Adds a slight 3D depth perspective */
+  padding: 20px;
 }
 
-
-.clock-body {
-  background: linear-gradient(145deg, #1e1e24, #16161a); 
-  border-radius: 20px;
+/* 3. The Physical Body of the Clock Card */
+.clock-card {
+  background: linear-gradient(145deg, #1e1e24, #16161a); /* Metallic gradient look */
+  padding: 35px 50px;
+  border-radius: 24px;
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.7),              
-    inset 0 2px 3px rgba(255, 255, 255, 0.05);   
-  border: 4px solid #2a2a32;       
+    0 20px 50px rgba(0, 0, 0, 0.7),                /* Heavy drop shadow under the clock */
+    inset 0 2px 3px rgba(255, 255, 255, 0.05);     /* Inner edge metallic reflection */
+  border: 4px solid #2a2a32;       /* The hard outer rim frame */
   text-align: center;
+  max-width: 450px;
 }
 
-
-.clock-title {
-  color: #65657b;                
+/* 4. The Clock Header Title (h2) */
+.clock-card h2 {
+  color: #65657b;                 /* Dimmed, industrial gray text */
   font-size: 14px;
-  letter-spacing: 4px;         
-  font-weight: 700;
+  letter-spacing: 3px;            /* Spaced letters like premium branding */
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
 }
 
+/* 5. The Dynamic Greeting Prompt */
+.greeting {
+  color: #a0a0b8;                 /* Softer light-gray for subtext */
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 25px 0;
+}
 
-.clock-display {
-  font-size: 64px;                
+/* 6. The Glowing LED Time Display (h1) */
+.clock-card h1 {
+  font-family: 'Courier New', Courier, monospace; /* Monospace stops numbers from jittering */
+  font-size: 56px;                /* Giant layout size */
   font-weight: bold;
-  color: #00ffcc;                
-  background-color: #09090b;     
-  padding: 20px 40px;
+  color: #00ffcc;                 /* Electric LED Teal Mint */
+  background-color: #09090b;      /* Darkened inner screen slot */
+  padding: 15px 30px;
   border-radius: 12px;
-  margin: 0;
-  display: inline-block;         
-  letter-spacing: 2px;
+  margin: 0 0 25px 0;
+  display: inline-block;          /* Snugs the black screen around the time digits */
+  letter-spacing: 1px;
   
-  
+  /* The LED illumination layer */
   box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.9); 
   text-shadow: 0 0 20px rgba(0, 255, 204, 0.6), 0 0 40px rgba(0, 255, 204, 0.2); 
+}
+
+/* 7. The Full Calendar Date (h3) */
+.clock-card h3 {
+  color: #8f8f9e;                 /* Clean metallic sub-color */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;      /* Makes the day and month look perfectly balanced */
 }
